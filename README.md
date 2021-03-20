@@ -132,3 +132,4 @@ hist = pd.DataFrame(history.history)
 hist['epoch'] = history.epoch
 print(hist)
 ~~~ 
+the end
