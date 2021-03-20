@@ -5,20 +5,17 @@ All my projects in python are developed for internal using only and related to m
 
 ## OS and files
 
-- Sometime I need to work with some files, uzip them and rename. For example this part of code renames all "*.dat" files using serial number contained in the file
+- Sometime I need to work with some files, uzip them and rename. For example this part of code check if 'sample.xlsx' is exist and detele it. It alsomakes the list of excel files:
 ~~~
-file_list = os.listdir()
+    if os.path.isfile('sample.xlsx'):
+        os.remove('sample.xlsx')
 
-for file in files:
-    if file[-3:]=='dat':
-        f = open(file, 'r', encoding="utf-8")
-        serial_num = f.readlines()[14]
-        serial_num = serial_num.split('\"')[1]
-        for row_num in range (1, sheet.max_row + 1):
-            if sheet.cell(row=row_num, column=2).value == serial_num:
-                new_filename = sheet.cell(row=row_num, column=1).value + "_" + file
-        f.close()
-        os.rename(file, new_filename)
+    files = os.listdir()
+    '''maiking the list of excel files'''
+    file_list = []
+    for file in files:
+        if file[-4:] == 'xlsx':
+            file_list.append(file)
 ~~~
 
 - This part of code unzip all zip files in folder and rename it:
