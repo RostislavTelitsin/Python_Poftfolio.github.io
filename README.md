@@ -19,7 +19,6 @@ for file in files:
                 new_filename = sheet.cell(row=row_num, column=1).value + "_" + file
         f.close()
         os.rename(file, new_filename)
-
 ~~~
 
 - This part of code unzip all zip files in folder and rename it:
