@@ -60,3 +60,25 @@ i=0
                 i += 1
     wb_com.save("sample.xlsx")
 ~~~ 
+
+## Binance
+I also have some expirience with Binance criptocurrency working. I used **requests** lib interoperability with binance server, binance **API** to get data from server and **keras** lib to predict market trend
+
+- this part of code requests data from server using Binance API:
+~~~ 
+    def collect_data(self, startTime, endTime):
+        url = 'https://api.binance.com/api/v3/klines'
+        limit = '1000'
+
+        req_params = {
+            'symbol': self.name,
+            'interval': self.interval,
+            'startTime': startTime,
+
+            'endTime': endTime,
+            'limit': limit
+        }
+        data = requests.get(url, params=req_params)
+        data = np.asarray(json.loads(data.text))
+        return data
+~~~ 
