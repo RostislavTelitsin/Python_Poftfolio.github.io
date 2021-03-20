@@ -52,14 +52,7 @@ i=0
                 ws_com.cell(row=2 + i, column=1).value = file_name[:-5]
                 ws_com.cell(row=2 + i, column=2).value = sheet.cell(row=NE_num, column=1).value
                 ws_com.cell(row=2 + i, column=3).value = sheet.cell(row=NE_num, column=2).value
-                ws_com.cell(row=2 + i, column=4).value = sheet.cell(row=NE_num, column=3).value
-                ws_com.cell(row=2 + i, column=5).value = sheet.cell(row=NE_num, column=4).value
-                ws_com.cell(row=2 + i, column=6).value = sheet.cell(row=NE_num, column=5).value
-                ws_com.cell(row=2 + i, column=7).value = sheet.cell(row=NE_num, column=6).value
-                ws_com.cell(row=2 + i, column=8).value = sheet.cell(row=NE_num, column=7).value
-                ws_com.cell(row=2 + i, column=9).value = sheet.cell(row=NE_num, column=8).value
-                ws_com.cell(row=2 + i, column=10).value = sheet.cell(row=NE_num, column=9).value
-                ws_com.cell(row=2 + i, column=11).value = sheet.cell(row=NE_num, column=10).value
+                ...
                 ws_com.cell(row=2 + i, column=12).value = sheet.cell(row=NE_num, column=11).value
                 if sheet.cell(row=NE_num, column=11).value:
                     xxx = str(sheet.cell(row=NE_num, column=11).value)
