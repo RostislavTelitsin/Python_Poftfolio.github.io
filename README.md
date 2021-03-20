@@ -7,6 +7,8 @@ All my projects in python are developed for internal using only and ralated to m
 
 Sometime I need to work with some files, uzip them and rename. For example this part of code renames all "*.dat" files using serial number contained in the file
 ~~~
+file_list = os.listdir()
+
 for file in files:
     if file[-3:]=='dat':
         f = open(file, 'r', encoding="utf-8")
