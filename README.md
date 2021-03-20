@@ -85,52 +85,52 @@ I also have some experience with Binance cryptocurrency working. I used **reques
 
 - **Keras** lib was used for machine learning to predict market trend. **Pandas** lib to prepare the data. **GPU** was used to increase processing capacity:  
 ~~~
-x_train = []
-y_train = []
+    x_train = []
+    y_train = []
 
-for i in range(input_seq_lengh, days_of_train):
-    x_train.append(training_set_scaled[i-input_seq_lengh:i])
-    y_train.append(res_data[i-1])
-x_train, y_train = np.array(x_train), np.array(y_train)
+    for i in range(input_seq_lengh, days_of_train):
+        x_train.append(training_set_scaled[i-input_seq_lengh:i])
+        y_train.append(res_data[i-1])
+    x_train, y_train = np.array(x_train), np.array(y_train)
 
-print(x_train.shape[2])
+    print(x_train.shape[2])
 
-physical_device = tf.config.experimental.list_physical_devices('GPU')
-print("Num GPU:", len(physical_device))
-tf.config.experimental.set_memory_growth(physical_device[0], True)
-print(physical_device)
+    physical_device = tf.config.experimental.list_physical_devices('GPU')
+    print("Num GPU:", len(physical_device))
+    tf.config.experimental.set_memory_growth(physical_device[0], True)
+    print(physical_device)
 
-print(x_train.shape)
-print(y_train.shape)
-model = Sequential()
-model.add(LSTM(units=1024,return_sequences=True,input_shape=(x_train.shape[1], x_train.shape[2])))
-model.add(Dropout(0.2))
-model.add(LSTM(units=512,return_sequences=True))
-model.add(Dropout(0.2))
-model.add(LSTM(units=64,return_sequences=True))
-model.add(Dropout(0.2))
-model.add(LSTM(units=32))
-
-model.add(Dropout(0.2))
-model.add(Dense(units=1))
-
-opt = tf.keras.optimizers.RMSprop(0.001)
-model.compile(optimizer=opt, loss='mae', metrics=['accuracy'])
-
-model.summary()
-print(x_train.shape)
-print(y_train.shape)
-
-example_result = model.predict(x_train[:1])
-print('Входные данные')
-print(x_train[:1])
-print(example_result)
-print('Начинаю!!!')
-history = model.fit(x_train,y_train,epochs=3000,batch_size=50)
-
-hist = pd.DataFrame(history.history)
-hist['epoch'] = history.epoch
-print(hist)
+    print(x_train.shape)
+    print(y_train.shape)
+    model = Sequential()
+    model.add(LSTM(units=1024,return_sequences=True,input_shape=(x_train.shape[1], x_train.shape[2])))
+    model.add(Dropout(0.2))
+    model.add(LSTM(units=512,return_sequences=True))
+    model.add(Dropout(0.2))
+    model.add(LSTM(units=64,return_sequences=True))
+    model.add(Dropout(0.2))
+    model.add(LSTM(units=32))
+    
+    model.add(Dropout(0.2))
+    model.add(Dense(units=1))
+    
+    opt = tf.keras.optimizers.RMSprop(0.001)
+    model.compile(optimizer=opt, loss='mae', metrics=['accuracy'])
+    
+    model.summary()
+    print(x_train.shape)
+    print(y_train.shape)
+    
+    example_result = model.predict(x_train[:1])
+    print('Входные данные')
+    print(x_train[:1])
+    print(example_result)
+    print('Начинаю!!!')
+    history = model.fit(x_train,y_train,epochs=3000,batch_size=50)
+    
+    hist = pd.DataFrame(history.history)
+    hist['epoch'] = history.epoch
+    print(hist)
 ~~~
 
 
