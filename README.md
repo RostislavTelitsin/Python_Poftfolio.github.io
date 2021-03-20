@@ -1,7 +1,7 @@
 # Rostislav Telitsin Python Portfolio
 python portfolio
 
-All my projects in python are developed for internal using only and related to my current job. That's why I cannot publish them. But I can breafly describe the methods I used to create them
+All my projects in python are developed for internal using only and related to my current job. That's why I cannot publish them. But I can breafly describe the methods I used
 
 ## OS and files
 
