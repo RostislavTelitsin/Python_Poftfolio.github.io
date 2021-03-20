@@ -5,7 +5,8 @@ All my projects in python are developed for internal using only and related to m
 
 ## OS and files
 
-- Sometime I need to work with some files, uzip them and rename. For example this part of code check if 'sample.xlsx' is exist and detele it. It alsomakes the list of excel files:
+Sometime I need to work with some files, uzip them and rename
+- For example this part of code check if 'sample.xlsx' is exist and detele it. It alsomakes the list of excel files:
 ~~~
     if os.path.isfile('sample.xlsx'):
         os.remove('sample.xlsx')
