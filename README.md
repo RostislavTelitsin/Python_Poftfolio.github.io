@@ -57,8 +57,6 @@ i=0
                     print(yyy)
                     ws_com.cell(row=2 + i, column=13).value = yyy[0]
                     ws_com.cell(row=2 + i, column=14).value = yyy[1]
-
                 i += 1
-
     wb_com.save("sample.xlsx")
 ~~~ 
