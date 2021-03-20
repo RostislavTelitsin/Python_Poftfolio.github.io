@@ -84,6 +84,7 @@ I also have some expirience with Binance criptocurrency working. I used **reques
 ~~~ 
 
 - **Keras** lib was used for machine learning to predict market trend. **Pandas** lib to prepare data. **GPU** was used to incrase processing capacity:
+
 ~~~ 
 x_train = []
 y_train = []
