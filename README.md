@@ -1,7 +1,7 @@
 # Rostislav Telitsin Python Portfolio
 python portfolio
 
-All my projects in python are developed for internal using only and ralated to my current work of support team. That's why I cannot publish them. But I can breafly describe the methods I used to create them
+All my projects in python are developed for internal using only and related to my current job. That's why I cannot publish them. But I can breafly describe the methods I used to create them
 
 ## OS and files
 
@@ -14,13 +14,27 @@ for file in files:
         f = open(file, 'r', encoding="utf-8")
         serial_num = f.readlines()[14]
         serial_num = serial_num.split('\"')[1]
-        print(serial_num)
         for row_num in range (1, sheet.max_row + 1):
             if sheet.cell(row=row_num, column=2).value == serial_num:
-                print(sheet.cell(row=row_num, column=1).value)
                 new_filename = sheet.cell(row=row_num, column=1).value + "_" + file
-                print(new_filename)
         f.close()
         os.rename(file, new_filename)
 
 ~~~
+
+This part of code unzip all zip files in folder and rename it:
+~~~
+for file in DIRname:
+    if file.split(".")[1] == "zip":
+
+        if len(file.split("_"))==4:
+            NeName = file.split("_")[2] + "_" + file.split("_")[3]
+        else:
+            NeName = file.split("_")[2]
+        
+        NeName = NeName.split(".")[0]
+        print(file, "\n")
+        zp = ZipFile(file, 'r')
+        zp.extractall()
+        os.rename(file[:-4] + '.txt', 'CFGMML-' + NeName + '-erunda.txt')
+~~~        
