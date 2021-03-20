@@ -1,12 +1,11 @@
 # Rostislav Telitsin Python Portfolio
-python portfolio
 
-All my projects in python are developed for internal using only and related to my current job. That's why I cannot publish them. But I can breafly describe the methods I used
+All my projects in python are developed for internal using only and related to my current job. That's why I cannot publish them. But I can briefly describe the methods I used
 
 ## OS and files
 
 Sometime I need to work with some files, uzip them and rename
-- For example this part of code check if 'sample.xlsx' is exist and detele it. It alsomakes the list of excel files:
+- For example, this part of code check if 'sample.xlsx' is exist and delete it. It also makes the list of excel files:
 ~~~
     if os.path.isfile('sample.xlsx'):
         os.remove('sample.xlsx')
@@ -62,7 +61,7 @@ i=0
 ~~~ 
 
 ## Binance
-I also have some expirience with Binance criptocurrency working. I used **requests** lib interoperability with binance server, binance **API** to get data from server and **keras** lib to predict market trend
+I also have some experience with Binance cryptocurrency working. I used **requests** lib interoperability with Binance server, binance **API** to get data from the server and **keras** lib to predict market trends
 
 - this part of code requests data from server using Binance API:
 ~~~ 
@@ -83,7 +82,7 @@ I also have some expirience with Binance criptocurrency working. I used **reques
         return data
 ~~~ 
 
-- **Keras** lib was used for machine learning to predict market trend. **Pandas** lib to prepare data. **GPU** was used to incrase processing capacity:
+- **Keras** lib was used for machine learning to predict market trend. **Pandas** lib to prepare the data. **GPU** was used to increase processing capacity:
 
 ~~~ 
 x_train = []
@@ -114,7 +113,6 @@ model.add(LSTM(units=32))
 
 model.add(Dropout(0.2))
 model.add(Dense(units=1))
-
 
 opt = tf.keras.optimizers.RMSprop(0.001)
 model.compile(optimizer=opt, loss='mae', metrics=['accuracy'])
