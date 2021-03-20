@@ -22,7 +22,7 @@ for file in files:
 
 ~~~
 
-- This part of code unzip all zip files in folder and rename it using --openpyxl-- lib:
+- This part of code unzip all zip files in folder and rename it:
 ~~~
 for file in DIRname:
     if file.split(".")[1] == "zip":
@@ -39,8 +39,7 @@ for file in DIRname:
         os.rename(file[:-4] + '.txt', 'CFGMML-' + NeName + '-erunda.txt')
 ~~~        
 
-- This part of code works with exel file:
-
+- This part of code works with exel file using --openpyxl-- lib:
 ~~~ 
 i=0
     for file_name in file_list:
