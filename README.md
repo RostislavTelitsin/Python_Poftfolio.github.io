@@ -65,7 +65,7 @@ i=0
 I also have some experience with Binance cryptocurrency working. I used **requests** lib interoperability with Binance server, binance **API** to get data from the server and **keras** lib to predict market trends
 
 - this part of code requests data from server using Binance API:
-~~~ 
+~~~
     def collect_data(self, startTime, endTime):
         url = 'https://api.binance.com/api/v3/klines'
         limit = '1000'
@@ -81,10 +81,10 @@ I also have some experience with Binance cryptocurrency working. I used **reques
         data = requests.get(url, params=req_params)
         data = np.asarray(json.loads(data.text))
         return data
-~~~ 
+~~~
 
-- **Keras** lib was used for machine learning to predict market trend. **Pandas** lib to prepare the data. **GPU** was used to increase processing capacity : 
-~~~ 
+- **Keras** lib was used for machine learning to predict market trend. **Pandas** lib to prepare the data. **GPU** was used to increase processing capacity:
+~~~
 x_train = []
 y_train = []
 
@@ -131,7 +131,7 @@ history = model.fit(x_train,y_train,epochs=3000,batch_size=50)
 hist = pd.DataFrame(history.history)
 hist['epoch'] = history.epoch
 print(hist)
-~~~ 
+~~~
 
 the end
 [back to the main page](https://rostislavtelitsin.github.io)
