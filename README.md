@@ -84,7 +84,7 @@ I also have some experience with Binance cryptocurrency working. I used **reques
 ~~~
 
 - **Keras** lib was used for machine learning to predict market trend. **Pandas** lib to prepare the data. **GPU** was used to increase processing capacity:  
-~~~
+  ~~~
     x_train = []
     y_train = []
 
@@ -131,7 +131,7 @@ I also have some experience with Binance cryptocurrency working. I used **reques
     hist = pd.DataFrame(history.history)
     hist['epoch'] = history.epoch
     print(hist)
-~~~
+~~~  
 
 
 
