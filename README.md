@@ -5,7 +5,7 @@ All my projects in python are developed for internal using only and related to m
 
 ## OS and files
 
-Sometime I need to work with some files, uzip them and rename. For example this part of code renames all "*.dat" files using serial number contained in the file
+- Sometime I need to work with some files, uzip them and rename. For example this part of code renames all "*.dat" files using serial number contained in the file
 ~~~
 file_list = os.listdir()
 
@@ -22,7 +22,7 @@ for file in files:
 
 ~~~
 
-This part of code unzip all zip files in folder and rename it:
+- This part of code unzip all zip files in folder and rename it using --openpyxl-- lib:
 ~~~
 for file in DIRname:
     if file.split(".")[1] == "zip":
@@ -38,3 +38,38 @@ for file in DIRname:
         zp.extractall()
         os.rename(file[:-4] + '.txt', 'CFGMML-' + NeName + '-erunda.txt')
 ~~~        
+
+- This part of code works with exel file:
+
+~~~ 
+i=0
+    for file_name in file_list:
+    #    print(file_name)
+        wb = load_workbook(file_name)
+        sheet = wb.active
+        for NE_num in range(2, sheet.max_row + 1):
+            if sheet.cell(row=NE_num, column=1).value:
+                print(sheet.cell(row=NE_num, column=1).value)
+                ws_com.cell(row=2 + i, column=1).value = file_name[:-5]
+                ws_com.cell(row=2 + i, column=2).value = sheet.cell(row=NE_num, column=1).value
+                ws_com.cell(row=2 + i, column=3).value = sheet.cell(row=NE_num, column=2).value
+                ws_com.cell(row=2 + i, column=4).value = sheet.cell(row=NE_num, column=3).value
+                ws_com.cell(row=2 + i, column=5).value = sheet.cell(row=NE_num, column=4).value
+                ws_com.cell(row=2 + i, column=6).value = sheet.cell(row=NE_num, column=5).value
+                ws_com.cell(row=2 + i, column=7).value = sheet.cell(row=NE_num, column=6).value
+                ws_com.cell(row=2 + i, column=8).value = sheet.cell(row=NE_num, column=7).value
+                ws_com.cell(row=2 + i, column=9).value = sheet.cell(row=NE_num, column=8).value
+                ws_com.cell(row=2 + i, column=10).value = sheet.cell(row=NE_num, column=9).value
+                ws_com.cell(row=2 + i, column=11).value = sheet.cell(row=NE_num, column=10).value
+                ws_com.cell(row=2 + i, column=12).value = sheet.cell(row=NE_num, column=11).value
+                if sheet.cell(row=NE_num, column=11).value:
+                    xxx = str(sheet.cell(row=NE_num, column=11).value)
+                    yyy = ent_id_ver(xxx)
+                    print(yyy)
+                    ws_com.cell(row=2 + i, column=13).value = yyy[0]
+                    ws_com.cell(row=2 + i, column=14).value = yyy[1]
+
+                i += 1
+
+    wb_com.save("sample.xlsx")
+~~~ 
