@@ -35,6 +35,7 @@ for file in DIRname:
         os.rename(file[:-4] + '.txt', 'CFGMML-' + NeName + '-erunda.txt')
 ~~~        
 
+
 - This part of code works with excel file using **openpyxl** lib:
 ~~~ 
 i=0
