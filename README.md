@@ -1,6 +1,15 @@
 # Rostislav Telitsin Python Portfolio
 [< < back to the main page](https://rostislavtelitsin.github.io)
 
+> - IDE: PyCharm
+> - Libs I familiar with:
+>   - os
+>   - openpyxl
+>   - numpy
+>   - pandas
+>   - keras
+>   - requests
+
 All my projects in python are developed for internal using only and related to my current job. That's why I cannot publish them. But I can briefly describe the methods I used
 
 ## OS and files
